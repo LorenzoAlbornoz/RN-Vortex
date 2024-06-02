@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import {api} from '../service/api';
 import {LOGIN_URL} from '../service/path';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export default function Login({navigation}) {
   const [email, setEmail] = useState('');
@@ -19,6 +21,8 @@ export default function Login({navigation}) {
     try {
       const response = await api.post(LOGIN_URL, {email, password});
       if (response.status === 201) {
+        const accessToken = response.data.token;
+        AsyncStorage.setItem('accessToken', accessToken);
         navigation.navigate('Home');
       } else {
         Alert.alert('Error', 'Hubo un problema con tu inicio de sesión');

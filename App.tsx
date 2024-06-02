@@ -5,6 +5,7 @@ import React from 'react';
 import Login from './src/screen/Login';
 import Home from './src/screen/Home';
 import Register from './src/screen/Register';
+import PDFViewer from './src/screen/PDFViewer';
 
 function App(): React.JSX.Element {
   const Stack = createNativeStackNavigator();
@@ -37,6 +38,16 @@ function App(): React.JSX.Element {
           component={Home}
           options={{
             title: 'HOME',
+            headerTintColor: 'White',
+            headerTitleAlign: 'center',
+            headerStyle: {backgroundColor: '#2CB494'},
+          }}
+        />
+        <Stack.Screen
+          name="PDFViewer"
+          component={PDFViewer}
+          options={{
+            title: 'PDFViewer',
             headerTintColor: 'White',
             headerTitleAlign: 'center',
             headerStyle: {backgroundColor: '#2CB494'},

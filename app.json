@@ -1,4 +1,8 @@
 {
   "name": "Patient",
-  "displayName": "Patient"
+  "displayName": "Patient",
+  "plugins": [
+   "@config-plugins/react-native-blob-util",
+   "@config-plugins/react-native-pdf"
+  ],
 }
